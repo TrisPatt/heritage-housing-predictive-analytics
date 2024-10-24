@@ -21,8 +21,8 @@ You can safely delete the Template Instructions section of this README.md file, 
 5. Click Create
 
 6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
+pip3 install -r requirements.txt
+7. Open a new terminal and ``
 
 11. Open the jupyter_notebooks directory and click on the notebook you want to open.
 

@@ -381,12 +381,77 @@ As the client, I want to use the dashboard for future sales predictions, so that
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Project Summary
+* Introduction to the project
+* Dataset description
+* Link to README.md file for further information on the dataset
+* Business requirements
+
+### Page 2: Hypotheses and Validation
+* State each hypothesis
+* How it was validated
+* The Conclusion of each hypothesis
+
+### Page 3: HH Correlation Study
+* State business requirement 1
+* Show first 10 lines of dataset
+* State the key features used in the study
+* Analysis summary
+* Checkbox: display the scatterplots showing features correlation with the target variable
+* Checkbox: display boxplot showing the median and quartile ranges of SalePrice vs overall quality across different quality levels
+* Checkbox: Display heat map showing the combined Pearson/ Spearman correlation
+
+### Page 4: Predict Sale Price
+* State business requirement 2
+* Key with features and their min/max values
+* Set of widgets inputs
+* "Predict sale price for single house"
+*  Checkbox: Display predicted prices for each of the 4 inherited properties and show combined value
 
 
-## Conclusion
-### Summary of results
+### Page 5: Technical analysis
+* Present ML pipeline steps
+* Model success metrics
+* Test and Train performance on the model
+* Evaluation scatterplots on Test and Train
+* Feature importance 
+
+
+### Page 6: Project Conclusions
+* Considerations and conclusions after the pipeline is trained
+* Project outcomes
+
+
+## Technologies Used
+The technologies used throughout the development are listed below:
+
+### Languages
+
+* [Python](https://www.python.org/)
+
+### Python Packages
+
+* [Pandas](https://pandas.pydata.org/docs/index.html) - Data analysis and manipulation tool
+* [Numpy](https://numpy.org/doc/stable/index.html) - The fundamental package for scientific computing with Python
+* [YData Profiling](https://docs.profiling.ydata.ai/latest/) - For data profiling and exploratory data analysis
+* [Matplotlib](https://matplotlib.org/) - Comprehensive library for creating static, animated and interactive visualisations
+* [Seaborn](https://seaborn.pydata.org/) - Data visualisation library for drawing attractive and informative statistical graphics
+* [Feature-engine](https://feature-engine.trainindata.com/en/latest/) - Transformers to engineer and select features for machine learning models
+* [ppscore](https://pypi.org/project/ppscore/) - Data-type-agnostic score that can detect linear or non-linear relationships between two columns
+* [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for training the ML model
+* [Joblib](https://joblib.readthedocs.io/en/stable/) - Tool for dumping pipeline to pickle files
+* [Kaggle](https://pypi.org/project/kaggle/) - Kaggle API functionalit
+* [Streamlit](https://streamlit.io/) - Build the web app.
+
+### Other Technologies
+
+* [Git](https://git-scm.com/) - For version control
+* [GitHub](https://github.com/) - Code repository
+* [Heroku](https://heroku.com) - For application deployment
+* [Gitpod](https://www.gitpod.io/) - Cloud IDE used for development
+* [Jupyter Notebook](https://jupyter.org/) - Interactive Python
+* [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
+
 
 ## Validation
 
@@ -428,11 +493,8 @@ All python files were passed through the CI PEP8 Linter in order to validate the
 
 ### Media
 
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+
 
 ## Acknowledgements (optional)
 
-
-* In case you would like to thank the people that provided support through this project.
 

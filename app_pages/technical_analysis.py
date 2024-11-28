@@ -9,6 +9,8 @@ def technical_analysis_body():
     """Technical analysis for regression model."""
     st.write("## **Technical Analysis- Model Performance**")
 
+    st.write("---")
+
     version = 'v2'
     price_pipeline = load_pkl_file(
         f'outputs/ml_pipeline/predict_SalePrice/{version}/'
@@ -39,27 +41,48 @@ def technical_analysis_body():
         f"outputs/ml_pipeline/predict_SalePrice/{version}/y_test.csv"
     ).squeeze()
 
-    st.write(
-        "The target model performance was 0.75 for both train and test sets. "
-        "The model exceeded the target as shown below."
+    st.info(f"The final pipeline used to train the model was as follows:  \n")
+    st.image("assets/imgs/pipeline_steps.jpg", caption="Pipeline steps", use_column_width=True)
+
+    st.write("---")
+    st.write("### Model Performance")
+    st.success(
+        f"* The target model performance was 0.75 for both train and test sets.\n"
+        f"* The model exceeded the target as shown below."
     )
 
     # Display Regression Performance
-    st.write("### Model Performance")
     regression_performance(X_train, y_train, X_test, y_test, price_pipeline)
 
-    st.write(
-        "The chart shows the importance of each selected feature."
+    st.success(
+        "The model explains 92.2% of the variance in the target variable within the "
+        "training data, and 82.2% of variance on unseen test data.  \n"
+        "On average, the model's predictions deviate by approximately $14,050 from "
+        "the actual values on train set and approximately $20,224 from the actual "
+        "values in the test set.  \n"
+        ""
     )
 
-    # Display Feature Importance
-    st.write("### Feature Importance")
-    st.image(feat_importance, caption="Feature Importance", use_column_width=True)
+    st.write("### Evaluation Plots")
 
     st.write(
-        "The following evaluation scatterplots show the train and test sets."
+        "The following evaluation scatterplots illustrate the relationship " 
+        "between actual and predicted values for the train and test sets. "
+        "The clustering of points near the regression line demonstrates "
+        "the model's accuracy and strong predictive performance."
     )
 
     # Display Evaluation Plots
-    st.write("### Evaluation Plots")
     regression_evaluation_plots(X_train, y_train, X_test, y_test, price_pipeline)
+
+    st.write("---")
+
+    st.write("### Feature Importance")
+
+    st.write(
+        "The following histogram highlights the importance of each selected "
+        "feature in relation to its correlation with the sale price. "
+    )
+
+    # Display Feature Importance
+    st.image(feat_importance, caption="Feature Importance", use_column_width=True)

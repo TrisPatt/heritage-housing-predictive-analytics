@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from src.data_management import (
     load_house_prices_records,
     load_inherited_houses,
@@ -41,6 +42,17 @@ def predict_sale_price_body():
         f"click predict sale price to see the predicted value for the "
         f"property."
     )
+    st.info(
+        f"**Key**  \n"
+        f"*Overall Quality*- values from 1-10, where 1 is very poor and "
+        f"10 is very excellent.  \n"
+        f"*TotalBsmtSF*- Total basement square footage. Values are 0 - 6110  \n"
+        f"*GarageArea*- Garage area measured in square feet. values are 0 - 1418  \n"
+        f"*GrLivArea*- Ground Living area measured in square feet. Values are "
+        f"334 - 5642.  \n"
+        f"*YearBuilt*- Original construction date. Values are 1872 - 2010. "
+
+    )
     st.write("---")
 
     # Generate Live Data
@@ -53,7 +65,7 @@ def predict_sale_price_body():
     st.write("---")
 
     st.info(
-        "Click below to see the predicted value of each of the 4"
+        "Click below to see the predicted value of each of the 4 "
         "inherited houses:"
     )
 
@@ -95,19 +107,23 @@ def DrawInputsWidgets():
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
             value=int(df[feature].median()),
+            step=1,  
+            format="%d"
         )
-        X_live[feature] = st_widget
+        X_live[feature] = int(st_widget) 
 
     # Feature: Garage Area
     with col3:
         feature = "GarageArea"
         st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median()),
+        label=feature,
+        min_value=int(df[feature].min() * percentageMin),
+        max_value=int(df[feature].max() * percentageMax),
+        value=int(df[feature].median()),
+        step=1,  
+        format="%d"  
         )
-        X_live[feature] = st_widget
+        X_live[feature] = int(st_widget)
 
     # Feature: Ground Living Area
     with col4:

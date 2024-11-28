@@ -40,9 +40,9 @@ def HH_correlation_study_body():
 
     # Correlation Study Summary
     st.write(
-        "* A correlation study was conducted in the notebook to better understand "
-        "how the variables are correlated to the sale price. \n"
-        "The most correlated variables are: **{vars_to_study}**"
+        f"* A correlation study was conducted in the notebook to better understand "
+        f"how the variables are correlated to the sale price. \n"
+        f"The most correlated variables are: **{vars_to_study}**"
     )
 
     # From correlation study notebook

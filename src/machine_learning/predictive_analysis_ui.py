@@ -34,6 +34,13 @@ def predict_inherited_houses(inherited_houses, price_features, price_pipeline):
     # Filter features for inherited houses
     inherited_houses_filtered = inherited_houses[price_features]
 
+    if "TotalBsmtSF" in inherited_houses_filtered.columns:
+        inherited_houses_filtered["TotalBsmtSF"] = inherited_houses_filtered["TotalBsmtSF"].astype(int)
+
+    if "GarageArea" in inherited_houses_filtered.columns:
+        inherited_houses_filtered["GarageArea"] = inherited_houses_filtered["GarageArea"].astype(int)
+
+
     # Predict sale prices
     predictions = price_pipeline.predict(inherited_houses_filtered)
 

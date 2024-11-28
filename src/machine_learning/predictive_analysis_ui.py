@@ -4,7 +4,8 @@ import pandas as pd
 
 def predict_sale_price(X_live, price_features, price_pipeline):
     """
-    Predict the house sale price using the input features and regression pipeline.
+    Predict the house sale price using the input features and regression
+    pipeline.
 
     """
     # Filter input data to include only relevant features
@@ -25,7 +26,8 @@ def predict_sale_price(X_live, price_features, price_pipeline):
 
 def predict_inherited_houses(inherited_houses, price_features, price_pipeline):
     """
-    Predict sale prices for inherited houses and display features alongside predictions.
+    Predict sale prices for inherited houses and display features alongside
+    predictions.
     """
     st.write("### Inherited Houses Features and Predicted Prices")
 

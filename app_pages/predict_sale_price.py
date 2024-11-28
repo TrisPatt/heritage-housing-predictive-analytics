@@ -1,7 +1,15 @@
 import streamlit as st
 import pandas as pd
-from src.data_management import load_house_prices_records, load_inherited_houses, load_pkl_file
-from src.machine_learning.predictive_analysis_ui import predict_sale_price, predict_inherited_houses
+from src.data_management import (
+    load_house_prices_records,
+    load_inherited_houses,
+    load_pkl_file,
+)
+from src.machine_learning.predictive_analysis_ui import (
+    predict_sale_price,
+    predict_inherited_houses,
+)
+
 
 def predict_sale_price_body():
     """Predict sale price contents."""
@@ -11,20 +19,27 @@ def predict_sale_price_body():
 
     # Load model and features
     version = 'v2'
-    price_pipeline = load_pkl_file(
-        f'outputs/ml_pipeline/predict_SalePrice/{version}/best_regressor_pipeline.pkl'
+    file_path = (
+        f"outputs/ml_pipeline/predict_SalePrice/{version}/"
+        "best_regressor_pipeline.pkl"
     )
-    price_features = (pd.read_csv(f"outputs/ml_pipeline/predict_SalePrice/{version}/X_train.csv")
-                      .columns
-                      .to_list()
-                      )
+    price_pipeline = load_pkl_file(file_path)
+
+    price_features = (
+        pd.read_csv(
+            f"outputs/ml_pipeline/predict_SalePrice/{version}/X_train.csv"
+            )
+        .columns
+        .to_list()
+    )
 
     st.info(
         f"The client is interested in predicting the house sale price for "
         f"her four inherited houses and any other house in Ames, Iowa.  \n"
-        f"The features below are the most highly correlated features in relation "
-        f"to sale price. Enter values for each specific feature and click predict "
-        f"sale price to see the predicted value for the property."
+        f"The features below are the most highly correlated features in "
+        f"relation to sale price. Enter values for each specific feature and "
+        f"click predict sale price to see the predicted value for the "
+        f"property."
     )
     st.write("---")
 
@@ -38,14 +53,17 @@ def predict_sale_price_body():
     st.write("---")
 
     st.info(
-        f"Click below to see the predicted value of each of the 4 inherited houses:"
+        "Click below to see the predicted value of each of the 4"
+        "inherited houses:"
     )
 
     # Predict inherited houses sale price
-    st.write("### Predict Prices for inherited Houses")
+    st.write("### Predict Prices for Inherited Houses")
     if st.checkbox("Predict for Inherited Houses"):
-        inherited_houses = load_inherited_houses()  
-        predict_inherited_houses(inherited_houses, price_features, price_pipeline)
+        inherited_houses = load_inherited_houses()
+        predict_inherited_houses(
+            inherited_houses, price_features, price_pipeline
+            )
 
 
 def DrawInputsWidgets():
@@ -65,7 +83,7 @@ def DrawInputsWidgets():
             label=feature,
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median())
+            value=int(df[feature].median()),
         )
         X_live[feature] = st_widget
 
@@ -76,7 +94,7 @@ def DrawInputsWidgets():
             label=feature,
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median())
+            value=int(df[feature].median()),
         )
         X_live[feature] = st_widget
 
@@ -87,7 +105,7 @@ def DrawInputsWidgets():
             label=feature,
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median())
+            value=int(df[feature].median()),
         )
         X_live[feature] = st_widget
 
@@ -98,7 +116,7 @@ def DrawInputsWidgets():
             label=feature,
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median())
+            value=int(df[feature].median()),
         )
         X_live[feature] = st_widget
 
@@ -109,7 +127,7 @@ def DrawInputsWidgets():
             label=feature,
             min_value=int(df[feature].min() * percentageMin),
             max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median())
+            value=int(df[feature].median()),
         )
         X_live[feature] = st_widget
 

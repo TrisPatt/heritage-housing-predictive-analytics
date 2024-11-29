@@ -5,29 +5,26 @@
 Link to the project dashboard is [HERE](https://hh-predictive-analytics-p5-ab08303eeb0a.herokuapp.com/)
 
 ## Table of Contents
+- [Introduction](#Introduction)
 - [Business Requirements](#business-requirements)
 - [Dataset Content](#dataset-content)
-- [Hypotheses for Case Study](#hypotheses-for-case-study)
+- [Hypotheses and how to validate?](#hypotheses-and-how-to-validate?)
 - [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
-- [Business Requirement 1:*](#business-requirement-1--)
-- [Business Requirement 2:](#business-requirement-2-)
-  * [User Stories - Client:](#user-stories---client-)
-  * [User Stories - Data Practitioner:](#user-stories---data-practitioner-)
+- [Business Requirement 1: Correlation Analysis](#Business-Requirement-1:-Correlation-Analysis)
+- [Business Requirement 2: Predict Sale Price](#Business-Requirement-2:-Predict-Sale-Price)
 - [ML Business Case](#ml-business-case)
-    + [Predict House Prices in Ames, Iowa](#predict-house-prices-in-ames--iowa)
-- [Regression model](#regression-model)
+- [User stories and Epics](#User-stories-and-Epics)
 - [Dashboard Design](#dashboard-design)
-- [Wireframes](#wireframes)
-  * [Running the application](#running-the-application)
-  * [Answers Business Requirement 1:](#answers-business-requirement-1-)
-  * [Answers Business Requirement 2:](#answers-business-requirement-2-)
+- [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+- [Validation](#Validation)
 - [Unfixed Bugs](#unfixed-bugs)
-- [Conclusion](#conclusion)
-  * [Summary of Findings](#summary-of-findings)
-- [Results](#results)
 - [Deployment](#deployment)
   * [Heroku](#heroku)
-- [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+- [Credits and Acknowledgements](#credits-and-acknowledgements)
+- [Content](#content)
+
+
+### Content
 - [Credits and Acknowledgements](#credits-and-acknowledgements)
 
 ## Introduction
@@ -100,7 +97,7 @@ By delivering this application, we aim to address the client’s immediate conce
 |SalePrice|Sale Price|34900 - 755000|
 
 
-## Hypothesis and how to validate?
+## Hypotheses and how to validate?
 
 **Hypothesis 1: Living Space and Sale Price**<br>
 
@@ -429,7 +426,7 @@ The technologies used throughout the development are listed below:
 
 * [Python](https://www.python.org/)
 
-### Python Packages
+### Main Data Analysis and Machine Learning Libraries
 
 * [Pandas](https://pandas.pydata.org/docs/index.html) - Data analysis and manipulation tool
 * [Numpy](https://numpy.org/doc/stable/index.html) - The fundamental package for scientific computing with Python
@@ -476,25 +473,15 @@ All python files were passed through the CI PEP8 Linter in order to validate the
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## Main Data Analysis and Machine Learning Libraries
+## Credits and Acknowledgements
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
-
-## Credits
-
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
-### Content
-
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
+* This project utilized the repository template from the Heritage Housing idea provided by Code Institute (CI).
+* The dataset was sourced from Kaggle, as referenced above.
+* The custom class for hyperparameter optimization was adapted from the Predict Tenure Notebook (CI).
+* Guidance and inspiration were drawn from the CI Data Analytics Program, including the Walkthrough Project 2 - Churnometer.
+* Additional research and insights were gathered from resources such as Google, YouTube, Stack Overflow, Slack, and GeeksforGeeks, which provided valuable explanations across various topics.  \n
+* A special thanks to my mentor, Mo Shami, for his invaluable guidance and support throughout this project.
 
 
-
-## Acknowledgements (optional)
 
 

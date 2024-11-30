@@ -14,8 +14,7 @@ def load_house_prices_records():
 
 def load_inherited_houses():
     df = pd.read_csv(
-        "/workspace/heritage-housing-predictive-analytics/inputs/datasets/raw/"
-        "house-price-20211124T154130Z-001/house-price/inherited_houses.csv"
+        "inputs/datasets/raw/house-price-20211124T154130Z-001/house-price/inherited_houses.csv"
     )
     return df
 

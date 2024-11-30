@@ -7,8 +7,7 @@ import joblib
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_house_prices_records():
     df = pd.read_csv(
-        "/workspace/heritage-housing-predictive-analytics/inputs/datasets/raw/"
-        "house-price-20211124T154130Z-001/house-price/house_prices_records.csv"
+        "outputs/datasets/collection/heritageHousing.csv"
     )
     return df
 

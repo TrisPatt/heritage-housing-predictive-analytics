@@ -3,8 +3,8 @@ import streamlit as st
 
 def hypothesis_body():
     """ Hypotheses and validation"""
-    st.write("## Project Hypotheses and Validation \n\n")
-
+    st.write("## **Project Hypotheses and Validation** \n\n")
+    st.write("---")
     st.success(
 
         f"**Hypothesis 1: Living Space and Sale Price**  \n"
@@ -23,7 +23,7 @@ def hypothesis_body():
         f"supported by statistical and visual analyses, highlighting the importance "
         f"of these features in determining property value."
     )
-    
+    st.write("---")
     st.success(
 
         f"**Hypothesis 2: Amenities and Sale Price**  \n"
@@ -45,7 +45,7 @@ def hypothesis_body():
         f"These features play a critical role in "
         f"determining property value."
     )
-
+    st.write("---")
     st.success(
 
         f"**Hypothesis 3: Build Quality and Sale Price**  \n"
@@ -68,7 +68,7 @@ def hypothesis_body():
         f"property value."
         
     )
-
+    st.write("---")
     st.success(
 
         f"**Hypothesis 4: Property Age and Sale Price**  \n"
@@ -91,7 +91,7 @@ def hypothesis_body():
         f"strong as some other features, the results demonstrate a clear trend, "
         f"emphasizing the value of modern construction in the housing market"
     )
-
+    st.write("---")
     st.info(
         f"**Additional factors/ Limitations**  \n\n"
         f"I acknowledge that neighborhood area is not included in this "

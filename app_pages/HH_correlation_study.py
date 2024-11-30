@@ -19,7 +19,8 @@ def HH_correlation_study_body():
         'TotalBsmtSF', 'YearBuilt', '1stFlrSF'
     ]
 
-    st.write("### Heritage Housing Correlation Study")
+    st.write("## **Heritage Housing Correlation Study**")
+    st.write("---")
     st.info(
         "The client is interested in discovering how the house attributes "
         "correlate with the sale price. Therefore, the client expects data "
@@ -37,12 +38,10 @@ def HH_correlation_study_body():
 
     st.write("---")
 
-    # Correlation Study Summary
     st.info(
         f"A correlation study was conducted in the notebook to better understand "
         f"how the variables are correlated to the sale price. \n"
     )
-
     st.info(
         "As part of this study, Pandas profiling was conducted on the dataset "
         "to examine variable types, distributions, and missing values, "
@@ -59,8 +58,7 @@ def HH_correlation_study_body():
         f"The most correlated variables are: **{vars_to_study}**"
     )
 
-
-    # From correlation study notebook
+    st.write("---")
     st.info(
         "**Analysis Summary**  \n"
         "* The analysis indicates that the overall build quality of a property "

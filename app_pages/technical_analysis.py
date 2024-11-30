@@ -80,7 +80,7 @@ def technical_analysis_body():
     st.write("### Feature Importance")
 
     st.write(
-        "The following histogram highlights the importance of each selected "
+        "The following bar chart highlights the importance of each selected "
         "feature in relation to its correlation with the sale price. "
     )
 

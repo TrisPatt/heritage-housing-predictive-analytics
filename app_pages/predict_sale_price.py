@@ -16,7 +16,8 @@ def predict_sale_price_body():
     """Predict sale price contents."""
 
     st.title("House Price Prediction Interface")
-    st.write("### Predict Sale Price")
+    st.write("---")
+    st.write("## **Predict Sale Price**")
 
     # Load model and features
     version = 'v2'

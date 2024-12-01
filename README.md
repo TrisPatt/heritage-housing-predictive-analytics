@@ -59,7 +59,8 @@ To meet the client’s expectations, we will build an interactive Application Da
 * Provide an interface for the client to explore how house attributes correlate with sale prices through clear and insightful data visualizations.
 * Predict the sale price of the four inherited houses and any individual house based on their features.
 By delivering this application, we aim to address the client’s immediate concerns while equipping her with tools to navigate future property transactions confidently.
-  
+
+[Back to top](#table-of-contents)
 
 ## Dataset Content
 
@@ -93,6 +94,7 @@ By delivering this application, we aim to address the client’s immediate conce
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
+[Back to top](#table-of-contents)
 
 ## Hypotheses and how to validate?
 
@@ -145,6 +147,7 @@ It is important to note, however, that measuring neighborhood desirability can b
 
 Future studies could incorporate external data sources or proxy variables to better account for the influence of neighborhood on property values.
 
+[Back to top](#table-of-contents)
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -174,6 +177,7 @@ Data visualizations, such as scatterplots, boxplots, and heatmaps, provide an in
 
 This analysis will be conducted as part of the **Data Visualization, Cleaning, and Preparation** epic (refer to Epics & User Stories for details).
 
+[Back to top](#table-of-contents)
 
 ### Business Requirement 2: Predict Sale Price
 
@@ -215,6 +219,7 @@ Simulate price predictions for properties beyond the inherited houses. This func
 
 This process will be undertaken as part of the **Dashboard Planning, Designing, and Development** epic (refer to Epics & User Stories for further details).
 
+[Back to top](#table-of-contents)
 
 ## ML Business Case
 
@@ -280,6 +285,8 @@ Deploy an application that integrates:
 Business Impact:
 The client gains the ability to confidently price her inherited properties.
 She can use the dashboard as a tool for future investments or sales in the Ames property market.
+
+[Back to top](#table-of-contents)
 
 ## Epics and User stories 
 
@@ -349,7 +356,8 @@ Client’s Perspective:<br>
 * As a user, I want to review the project hypotheses and their validations, so that I can assess what the project aimed to achieve and evaluate its success.
 * As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.
 * As a user, I want to input house attributes into the dashboard and receive sale price predictions, so that I can evaluate potential future investments in Ames, Iowa *(business Requirement 2)*.
-* As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model.
+* As a user, I want to see the value of my each of my 4 inherited houses in Ames, Iowa and the total for all *(business Requirement 2)*.
+* As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model *(business Requirement 2)*.
 ---
 
 **Epic 5: Dashboard Deployment and Release**<br>
@@ -365,6 +373,7 @@ Client’s Perspective:<br>
 * As a user, I want the dashboard to be hosted on a secure and accessible platform, so that I can use it whenever needed.
 * As a user, I want to be supplied with a thorough Readme so that I can deploy the project myself if needed.
 
+[Back to top](#table-of-contents)
 
 ## Dashboard Design
 
@@ -408,6 +417,7 @@ Client’s Perspective:<br>
 * Considerations and conclusions after the pipeline is trained
 * Project outcomes
 
+[Back to top](#table-of-contents)
 
 ## Technologies Used
 The technologies used throughout the development are listed below:
@@ -439,6 +449,8 @@ The technologies used throughout the development are listed below:
 * [Jupyter Notebook](https://jupyter.org/) - Interactive Python
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
 
+[Back to top](#table-of-contents)
+
 ## Testing
 ### Manual Testing
 
@@ -459,8 +471,7 @@ The technologies used throughout the development are listed below:
 | Project hypotheses page | Click on radio button on left navbar to navigate to Hypotheses page | Navigates to correct page. Can scroll through hypotheses | Functions as intended |
 
 ---
-
-*As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.*
+* As a user, I want to see clear visualizations of the relationships between house attributes and sale price, so that I can understand the factors driving property values *(Business requirement 1)*.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
@@ -478,61 +489,116 @@ The technologies used throughout the development are listed below:
 | --- | --- | --- | --- |
 | ML- Predict sale price page | Click on radio button on left navbar to ML- Predict sale price page | Navigates to correct page | Functions as intended |
 | ML- Predict sale price page- plus/ minus | Click on a value for each feature using plus/minus buttons| changes according to the plus/minus input | Functions as intended |
-| ML- Predict sale price page- enter value | Click on a value for each feature by clicking on the value and manually entering a value between those listed in the key| changes according to the input | Functions as intended |
-| ML- Predict sale price page | Click on a value for each feature using plus/minus buttons| changes according to the plus/minus input | Functions as intended |
-| ML- Predict sale price page | Click on radio "Scatterplots" | displays selected scatterplots | Functions as intended |
-| Correlation study page- Boxplot | Click on radio "Boxplot" | displays selected Boxplot | Functions as intended |
-| Correlation study page- Heat map | Click on radio "Heatmap" | displays selected heatmap | Functions as intended |
+| ML- Predict sale price page- Enter value in range | Click on a value for each feature by clicking on the value and manually entering a value between those listed in the key| changes according to the input. | Functions as intended |
+| ML- Predict sale price page- Enter value out of range | Click on a value for each feature by clicking on the value and manually entering a value out of the range form those listed in the key| Displays error message | Functions as intended |
+| ML- Predict sale price page- Enter values for prediction | select values from features within selected range| Once values are selected, they are replicated in "Input Features for Prediction"| | Functions as intended |
+| ML- Predict sale price page- predict price | click "Predict Sale Price for Single House"| A value is returned and displayed on the page| | Functions as intended |
+
+---
+* As a user, I want to see the value of my each of my 4 inherited houses in Ames, Iowa and the total for all *(business Requirement 2)*.
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| ML- Predict sale price page- Inherited houses | Click on "Predict Prices for Inherited Houses" | Shows each feature, its corresponding value and overall price. Shows total price | Functions as intended |
 
 ---
 
-*As a technical user, I can view the correlation analysis to see how the outcomes were reached (Business Requirement 1).*
+* As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model *(business Requirement 2)*.
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Correlation Study page | Navigate to page | Clicking on navbar link in sidebar navigates to correct page | Functions as intended |
-| Correlation data | Tick correlation results checkbox | Correlation data is displayed on dashboard | Functions as intended |
-| PPS Heatmap | Tick PPS heatmap checkbox | Heatmap is displayed on dashboard | Functions as intended |
-| Feature Correlation | Select feature from dropdown box | Relevant countplot is displayed | Functions as intended |
-| Parallel Plot | Tick parallel plot checkbox | Parallel plot is displayed on dashboard, is interactive | Functions as intended |
-
----
-
-*As a technical user, I can view all the data to understand the model performance and see statistics related to the model (Business Requirement 2)*
-
-| Feature | Action | Expected Result | Actual Result |
-| --- | --- | --- | --- |
-| Model performance page | Navigate to page | Clicking on navbar link in sidebar navigates to correct page | Functions as intended |
+| ML pipeline and technical analysis | Navigate to page using radio button | Displays ML pipeline page | Functions as intended |
+| ML Pipeline | View page | ML Pipelines used for this project are displayed | Functions as intended |
 | Success metrics | View page | Success metrics outlined in business case are displayed | Functions as intended |
-| ML Pipelines | View page | Both ML Pipelines from Jupyter notebooks are displayed | Functions as intended |
+| Model Performance | View page | Metrics for train and test sets and evaluation plots are displayed | Functions as intended |
 | Feature Importance | View page | Most important features are plotted and displayed | Functions as intended |
-| Model Performance | View page | Confusion matrix for train and test sets are displayed | Functions as intended |
 
 ---
 
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Conclusions and considerations | Navigate to page using radio button | Displaysconclusions and considerations | Functions as intended |
+
+
+[Back to top](#table-of-contents)
 
 ## Validation
 
 All python files were passed through the CI PEP8 Linter in order to validate the code to adhere to PEP8 standards. All files passed with no errors. 
 
+[Back to top](#table-of-contents)
+
 ## Unfixed Bugs
 
 * No known unfixed bugs
+
+[Back to top](#table-of-contents)
 
 ## Deployment
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+The project was deployed to Heroku using the following steps:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. Within your working directory, ensure there is a setup.sh file containing the following:
+```
+mkdir -p ~/.streamlit/
+echo "\
+[server]\n\
+headless = true\n\
+port = $PORT\n\
+enableCORS = false\n\
+\n\
+" > ~/.streamlit/config.toml
+```
+2. Within your working directory, ensure there is a runtime.txt file containing a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack supported version of Python.
+```
+python-3.10.12
+```
+3. Within your working directory, ensure there is a Procfile file containing the following:
+```
+web: sh setup.sh && streamlit run app.py
+```
+4. Ensure your requirements.txt file contains all the packages necessary to run the streamlit dashboard.
+5. Update your .gitignore and .slugignore files with any files/directories that you do not want uploading to GitHub or are unnecessary for deployment.
+6. Log in to [Heroku](https://id.heroku.com/login) or create an account if you do not already have one.
+7. Click the **New** button on the dashboard and from the dropdown menu select "Create new app".
+8. Enter a suitable app name and select your region, then click the **Create app** button.
+9. Once the app has been created, navigate to the Deploy tab.
+10. At the Deploy tab, in the Deployment method section select **GitHub**.
+11. Enter your repository name and click **Search**. Once it is found, click **Connect**.
+12. Navigate to the bottom of the Deploy page to the Manual deploy section and select main from the branch dropdown menu.
+13. Click the **Deploy Branch** button to begin deployment.
+14. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
+15. If the build fails, check the build log carefully to troubleshoot what went wrong.
+
+[Back to top](#table-of-contents)
+
+## Forking and Cloning
+If you wish to fork or clone this repository, please follow the instructions below:
+
+### Forking
+1. In the top right of the main repository page, click the **Fork** button.
+2. Under **Owner**, select the desired owner from the dropdown menu.
+3. **OPTIONAL:** Change the default name of the repository in order to distinguish it.
+4. **OPTIONAL:** In the **Description** field, enter a description for the forked repository.
+5. Ensure the 'Copy the main branch only' checkbox is selected.
+6. Click the **Create fork** button.
+
+### Cloning
+1. On the main repository page, click the **Code** button.
+2. Copy the HTTPS URL from the resulting dropdown menu.
+3. In your IDE terminal, navigate to the directory you want the cloned repository to be created.
+4. In your IDE terminal, type ```git clone``` and paste the copied URL.
+5. Hit Enter to create the cloned repository.
+
+### Installing Requirements
+**WARNING:** The packages listed in the requirements.txt file are limited to those necessary for the deployment of the dashboard to Heroku, due to the limit on the slug size.
+
+In order to ensure all the correct dependencies are installed in your local environment, run the following command in the terminal:
+
+    pip install -r full-requirements.txt
+
+[Back to top](#table-of-contents)
 
 ## Credits and Acknowledgements
 
@@ -543,6 +609,5 @@ All python files were passed through the CI PEP8 Linter in order to validate the
 * Additional research and insights were gathered from resources such as Google, YouTube, Stack Overflow, Slack, and GeeksforGeeks, which provided valuable explanations across various topics.  \n
 * A special thanks to my mentor, Mo Shami, for his invaluable guidance and support throughout this project.
 
-
-
+[Back to top](#table-of-contents)
 

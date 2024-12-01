@@ -8,7 +8,7 @@ Link to the project dashboard is [HERE](https://hh-predictive-analytics-p5-ab083
 - [Introduction](#Introduction)
 - [Business Requirements](#business-requirements)
 - [Dataset Content](#dataset-content)
-- [Hypotheses and how to validate?](#hypotheses-and-how-to-validate?)
+- [Hypotheses and how to validate?](#hypotheses-and-how-to-validate)
 - [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
 - [Business Requirement 1: Correlation Analysis](#business-Requirement-1-Correlation-Analysis)
 - [Business Requirement 2: Predict Sale Price](#business-Requirement-2-Predict-Sale-Price)
@@ -152,62 +152,68 @@ Future studies could incorporate external data sources or proxy variables to bet
 
 The client aims to understand how various house attributes correlate with sale prices. This requires both a statistical and visual analysis of the dataset to identify meaningful patterns. The following steps and their associated rationale are proposed to achieve this:
 
-1.  Data exploration- Pandas profiling
+1.  Data exploration- Pandas profiling<br>
 Rationale:
 Before diving into correlation analysis, it is essential to explore and understand the dataset comprehensively. Pandas Profiling provides an automated summary of the dataset, highlighting key statistics such as missing values, distribution of features, and initial correlations. This step helps identify potential issues (e.g., outliers, skewed distributions, or missing data) that may influence subsequent analysis.
 
-2. Encode categorical data
+2. Encode categorical data<br>
 Rationale:
-Categorical variables, such as kitchen quality or basement exposure, must be encoded into numerical representations for meaningful correlation analysis. Encoding allows these variables to be included in both statistical methods (Pearson, Spearman) and visualizations. For ordinal data (e.g., quality ratings), ordinal encoding preserves the inherent order, while one-hot encoding may be used for nominal data.
+Categorical variables, such as kitchen quality or basement exposure, must be encoded into numerical representations for meaningful correlation analysis. Encoding allows these variables to be included in both statistical methods (Pearson, Spearman) and visualizations. For ordinal data (e.g., quality ratings), ordinal encoding preserves the inherent order.
 
-2. Conduct a Check Using Spearman and Pearson Methods
+2. Conduct a Check Using Spearman and Pearson Methods and Predictive Power Score(PPS)<br>
 Rationale:
-Spearman and Pearson correlation methods are widely used for identifying relationships between variables. Pearson focuses on linear relationships, while Spearman captures monotonic relationships. Using both methods ensures a comprehensive analysis of correlations, even if the relationships are non-linear.
+Spearman and Pearson correlation methods are widely used for identifying relationships between variables. Pearson focuses on linear relationships, while Spearman captures monotonic relationships. Using both methods ensures a comprehensive analysis of correlations, even if the relationships are non-linear. PPS can be used to determine relationships between features.
 
-3. Identify highest correlated features
+3. Identify highest correlated features<br>
 Rationale:
-From the data analysis conducted using methods such as Pearson and Spearman correlation coefficients, we will identify the features most strongly associated with the sale price. 
+Using Pearson and Spearman correlation coefficients alongside PPS analysis, we will identify the features most strongly associated with sale price to prioritize them for further modeling and analysis
 
-4. Visualize Relationships Between Sale Price and Key Features
+4. Visualize Relationships Between Sale Price and Key Features<br>
 Rationale:
 Data visualizations, such as scatterplots, boxplots, and heatmaps, provide an intuitive way to communicate insights to the client. Highlighting the highest correlated features (e.g., living space, build quality, amenities) with sale price will directly address the client’s goal of understanding feature impact.
+
+This analysis will be conducted as part of the **Data Visualization, Cleaning, and Preparation** epic (refer to Epics & User Stories for details).
 
 
 ### Business Requirement 2: Predict Sale Price
 
 The goal is to provide an ML-driven solution that accurately forecasts the combined sales price of the client’s four inherited houses while also enabling exploration of the relationship between house characteristics and sale price through data visualizations. The following steps outline the approach and rationale:
 
-1. Develop a Machine Learning (ML) Model to Predict Sale Prices
+1. Develop a Machine Learning (ML) Model to Predict Sale Prices<br>
 Objective:
-Build a regression model to predict the sale prices of the inherited properties and other houses in Ames, Iowa.
+Build a regression model to predict the sale prices of the inherited properties and other houses in Ames, Iowa.<br>
 Approach:
 Use conventional ML techniques, such as linear regression, decision trees, or ensemble models (e.g., Random Forest, Gradient Boosting), depending on the dataset’s characteristics.
 Train and validate the model using historical property data, optimizing for accuracy and generalizability.
-Evaluate model performance using metrics such as R² (coefficient of determination), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).
+Evaluate model performance using metrics such as R² (coefficient of determination), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).<br>
 Rationale:
 Regression models are well-suited for understanding the relationships between variables (e.g., living space, build quality, amenities) and the target (sale price). By leveraging a robust model, we ensure the client receives reliable price forecasts for the inherited houses.
 
-2. Map Relationships Between Features and Sale Price
+This process will be undertaken as part of the **Model Training, Optimization, and Validation** epic (refer to Epics & User Stories for further details).
+
+2. Map Relationships Between Features and Sale Price<br>
 Objective:
-Use the regression model to analyze and quantify the impact of individual house attributes on sale price.
+Use the regression model to analyze and quantify the impact of individual house attributes on sale price.<br>
 Approach:
 Leverage feature importance metrics from the regression model to determine which variables contribute most to sale price predictions.
-Use feature importance to illustrate the marginal effects of specific features (e.g., living area, build quality) on sale price.
+Use feature importance to illustrate the marginal effects of specific features (e.g., living area, build quality) on sale price.<br>
 Rationale:
 Mapping these relationships provides actionable insights into the driving factors behind property values, enabling the client to make informed decisions.
 
-3. Incorporate Data Visualizations into an Interactive Streamlit Dashboard
+3. Incorporate Data Visualizations into an Interactive Streamlit Dashboard<br>
 Objective:
-Create a user-friendly dashboard for the client to explore how house attributes influence sale price and to view predictions for the inherited properties.
+Create a user-friendly dashboard for the client to explore how house attributes influence sale price and to view predictions for the inherited properties.<br>
 Approach:
 Integrate visualizations (e.g., scatterplots, box plots, heatmaps etc.) into the dashboard to represent feature correlations and model predictions.
 Allow dynamic interaction by filtering selected house attributes and visualizing predicted sale prices based on custom input.
 Show the predicted sale price of the 4 inherited houses along with total price.
-Include explanations of the visualizations to enhance interpretability for the client.
+Include explanations of the visualizations to enhance interpretability for the client.<br>
 Rationale:
-An interactive dashboard enables the client to:
+An interactive dashboard enables the client to:<br>
 Explore relationships between attributes and sale price intuitively.
 Simulate price predictions for properties beyond the inherited houses. This functionality empowers the client with a deeper understanding of the results.
+
+This process will be undertaken as part of the **Dashboard Planning, Designing, and Development** epic (refer to Epics & User Stories for further details).
 
 
 ## ML Business Case
@@ -242,7 +248,7 @@ Analyze relationships between variables and sale price through exploratory data 
 3. Data Preparation
 Preprocessing Steps:
 Handle missing values and outliers.
-Encode categorical variables using methods such as ordinal or one-hot encoding.
+Encode categorical variables using methods such as ordinal encoding.
 Split data into training and testing sets for model validation.
 
 Feature Selection:
@@ -264,9 +270,6 @@ Predictions:
 Generate sale price predictions for the four inherited houses.
 Provide the combined predicted value for all properties.
 
-Interpretability:
-Use techniques like SHAP values or PDPs to explain the model’s predictions and feature importance.
-
 6. Deployment
 Interactive Dashboard:
 Deploy an application that integrates:
@@ -278,99 +281,87 @@ Business Impact:
 The client gains the ability to confidently price her inherited properties.
 She can use the dashboard as a tool for future investments or sales in the Ames property market.
 
-### User stories and Epics
+## Epics and User stories 
 
-#### The Practioner
-Epic 1: Information Gathering and Data Collection
+**Epic 1: Information Gathering and Data Collection**<br>
 Description: Gather relevant data to understand the problem domain and prepare it for analysis and modeling.
 
-User Stories:
-As a data practitioner, I want to obtain a public dataset of house attributes and sale prices in Ames, Iowa, so that I can analyze and model the relationship between attributes and prices.
-As a data practitioner, I want to understand the client’s specific goals and requirements, so that I can tailor the analysis and predictions to their needs.
+**User Stories:**<br>
 
+Data Practitioner’s Perspective:<br>
+* As a data practitioner, I want to obtain a public dataset of house attributes and sale prices in Ames, Iowa, so that I can analyze and model the relationship between attributes and prices.
+* As a data practitioner, I want to understand the client’s specific goals and requirements, so that I can tailor the analysis and predictions to their needs.<br>
 
-Epic 2: Data Visualization, Cleaning, and Preparation
+Client’s Perspective:<br>
+* As the client, I want to provide my specific requirements and goals for the analysis, so that the outputs align with my needs.
+* As the client, I want to ensure that the data collected reflects real-world house attributes and prices, so that the predictions are relevant and actionable.
+* As the client, I want to be informed about the sources of data used, so that I can trust the integrity of the analysis.
+---
+
+**Epic 2: Data Visualization, Cleaning, and Preparation**<br>
 Description: Analyze, visualize, and prepare the dataset to extract meaningful insights and ensure it is ready for modeling.
 
-User Stories:
-As a data practitioner, I want to clean the dataset by handling missing values and outliers, so that the analysis and model training are not biased.
-As a data practitioner, I want to encode categorical variables, so that they can be used effectively in the regression model.
-As a data practitioner, I want to create visualizations (e.g., scatterplots, heatmaps, boxplots) of correlated variables against sale price, so that the client can understand the relationships between house attributes and sale price.
-As a data practitioner, I want to compute correlation coefficients (Pearson, Spearman) and PPS scores, so that I can identify the most relevant variables for sale price prediction.
+**User Stories:**<br>
 
+Data Practitioner’s Perspective:<br>
+* As a data practitioner, I want to clean the dataset by handling missing values and outliers, so that the analysis and model training are not biased.
+* As a data practitioner, I want to encode categorical variables, so that they can be used effectively in the regression model.
+* As a data practitioner, I want to create visualizations (e.g., scatterplots, heatmaps, boxplots) of correlated variables against sale price, so that the client can understand the relationships between house attributes and sale price.*(Business requirement 1)*
+* As a data practitioner, I want to compute correlation coefficients (Pearson, Spearman) and PPS scores, so that I can identify the most relevant variables for sale price prediction.*(Business Requirement 1)*
+* As a data practitioner, I want to perform feature engineering on the required features to enhance the quality and predictive power of the dataset, ensuring the model is optimally prepared for training.
 
-Epic 3: Model Training, Optimization, and Validation
+Client’s Perspective:<br>
+* As a user, I want to see clear visualizations of the relationships between house attributes and sale price, so that I can understand the factors driving property values *(Business requirement 1)*.
+* As a user, I want the dataset to be properly cleaned and prepared, so that the predictions I receive are reliable.
+* As a user, I want to know which variables are most important for sale price predictions, so that I can make informed decisions about property improvements.*(Business requiremnt 1)*
+---
+
+**Epic 3: Model Training, Optimization, and Validation**<br>
 Description: Build, train, and validate a regression model to predict house sale prices with acceptable performance metrics.
 
-User Stories:
-As a data practitioner, I want to train a regression model using house attribute data, so that I can predict sale prices for the client’s inherited properties.
-As a data practitioner, I want to optimize the model’s hyperparameters, so that the model achieves a minimum R² score of 0.75 on both the training and test sets.
-As a data practitioner, I want to evaluate the model using metrics such as MAE, RMSE, and R², so that I can ensure its accuracy and reliability.
+**User Stories:**<br>
 
+Data Practitioner’s Perspective:<br>
+* As a data practitioner, I want to train a regression model using house attribute data, so that I can predict sale prices for the client’s inherited properties *(Business Requirement 2)*.
+* As a data practitioner, I want to optimize the model’s hyperparameters, so that the model achieves a minimum R² score of 0.75 on both the training and test sets. *(Business requirement 2)*. 
+* As a data practitioner, I want to evaluate the model using metrics such as MAE, RMSE, and R², so that I can ensure its accuracy and reliability.
 
-Epic 4: Dashboard Planning, Design, and Development
+Client’s Perspective:<br>
+* As a user, I want the model to provide accurate predictions for my four inherited properties, so that I can set competitive sale prices. *(Business Requirement 2)*
+* As a user, I want assurance that the model has been thoroughly tested, so that I can trust its recommendations.
+* As a user, I want the model’s performance metrics (e.g., R², MAE) to meet the agreed-upon standards, so that I know the predictions are reliable.
+---
+
+**Epic 4: Dashboard Planning, Design, and Development**<br>
 Description: Create an interactive dashboard to display the analysis results and allow the client to explore data and predictions.
 
-User Stories:
-As a data practitioner, I want to design a dashboard interface that is user-friendly, so that the client can intuitively interact with the visualizations and predictions.
-As a data practitioner, I want to include visualizations of correlations and feature importance in the dashboard, so that the client can understand the drivers of sale price.
-As a data practitioner, I want to build a functionality in the dashboard to predict sale prices for the client’s four inherited properties, so that the client can make informed pricing decisions.
-As a data practitioner, I want to allow the client to input house attributes into the dashboard and receive sale price predictions for other properties in Ames, so that the dashboard can serve as a future planning tool.
+**User Stories:**<br>
 
+Data Practitioner’s Perspective:<br>
+* As a data practitioner, I want to design a dashboard interface that is user-friendly, so that the client can intuitively interact with the visualizations and predictions.
+* As a data practitioner, I want to include visualizations of correlations and feature importance in the dashboard, so that the client can understand the drivers of sale price *(Business Requirement 1)*.
+* As a data practitioner, I want to build a functionality in the dashboard to predict sale prices for the client’s four inherited properties, so that the client can make informed pricing decisions *(business Requirement 2)*.
+* As a data practitioner, I want to allow the client to input house attributes into the dashboard and receive sale price predictions for other properties in Ames, so that the dashboard can serve as a future planning tool *(business Requirement 2)*.
 
-Epic 5: Dashboard Deployment and Release
+Client’s Perspective:<br>
+* As a user, I want the dashboard to be intuitive and easy to navigate, so that I can use it without technical expertise.
+* As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.
+* As a user, I want to input house attributes into the dashboard and receive sale price predictions, so that I can evaluate potential future investments in Ames, Iowa *(business Requirement 2)*.
+* As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model.
+---
+
+**Epic 5: Dashboard Deployment and Release**<br>
 Description: Deploy the completed dashboard for the client to use and ensure proper functionality.
 
-User Stories:
-As a data practitioner, I want to host and deploy the dashboard on a secure platform, so that the client can access it easily.
-As a data practitioner, I want to test the dashboard for usability and performance, so that it meets the client’s requirements without technical issues.
-As a data practitioner, I want to provide the client with a tutorial or user guide, so that they can effectively utilize the dashboard for their property pricing needs.
+**User Stories:**<br>
 
-#### The Client
-Epic 1: Understanding the Factors Influencing Sale Prices
-Description: As the client, I want to explore how various house attributes affect sale prices so that I can understand what drives property value in Ames, Iowa.
+Data Practitioner’s Perspective:<br>
+* As a data practitioner, I want to host and deploy the dashboard on a secure platform, so that the client can access it easily.
+* As a data practitioner, I want to test the dashboard for usability and performance, so that it meets the client’s requirements without technical issues.
 
-User Stories:
-As the client, I want to view clear visualizations of how house attributes (e.g., living space, build quality) correlate with sale prices so that I can identify key factors that influence property value.
-As the client, I want to review a report summarizing the most relevant variables impacting sale prices so that I can make informed pricing decisions.
-As the client, I want to explore how specific attributes of my four inherited houses compare to the highest-impact features, so that I can estimate their potential market value.
-
-
-Epic 2: Predicting Sale Prices
-Description: As the client, I want to predict the sale prices of my inherited properties and other houses in Ames, Iowa, so that I can confidently set prices and plan for future investments.
-
-User Stories:
-As the client, I want to view accurate sale price predictions for my four inherited houses so that I can determine their market value.
-As the client, I want to input house attributes into the dashboard to predict sale prices for other properties in Ames, so that I can plan for future property sales or investments.
-As the client, I want to understand how the predictions are generated (e.g., which features contributed most), so that I can trust and validate the results.
-
-
-Epic 3: Using an Interactive Dashboard
-Description: As the client, I want to use a dashboard to interact with the data and predictions so that I can explore insights easily and make decisions efficiently.
-
-User Stories:
-As the client, I want a user-friendly dashboard that provides easy navigation, so that I can quickly access the insights and tools I need.
-As the client, I want to view visualizations on the dashboard (scatterplots, heatmaps, etc.) to see how house attributes relate to sale prices, so that I can explore patterns intuitively.
-As the client, I want the dashboard to display the combined sale price of my inherited properties, so that I can understand their total market value.
-As the client, I want to simulate how changing specific house attributes (e.g., adding a garage or increasing living space) affects sale prices, so that I can evaluate improvement options for my properties.
-
-
-Epic 4: Evaluating Project Success
-Description: As the client, I want to evaluate the outcomes of the analysis and the dashboard's capabilities to ensure they meet my needs.
-
-User Stories:
-As the client, I want to ensure the visualizations clearly show how house attributes correlate with sale prices, so that I can gain actionable insights.
-As the client, I want to ensure the sale price predictions meet an agreed level of accuracy (R² ≥ 0.75) so that I can trust the model's outputs.
-As the client, I want to provide feedback on the dashboard’s usability and insights, so that any necessary improvements can be made before final deployment.
-
-
-Epic 5: Leveraging Insights for Business Decisions
-Description: As the client, I want to use the insights and tools provided to maximize the value of my inherited properties and plan for future real estate opportunities.
-
-User Stories:
-As the client, I want to identify the features that add the most value to houses in Ames, so that I can prioritize improvements to my inherited properties.
-As the client, I want to understand trends in the Ames housing market, so that I can make data-driven investment decisions.
-As the client, I want to use the dashboard for future sales predictions, so that I can manage property sales efficiently.
+Client’s Perspective:<br>
+* As a user, I want the dashboard to be hosted on a secure and accessible platform, so that I can use it whenever needed.
+* As a user, I want to be supplied with a thorough Readme so that I can deploy the project myself if needed.
 
 
 ## Dashboard Design

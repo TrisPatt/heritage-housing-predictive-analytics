@@ -1,5 +1,5 @@
 # Predict Sale Price
-<img width="946" alt="Screenshot 2023-08-31 at 09 05 26" src="assets/imgs/Screenshot 2024-11-27 164059.png">
+<img width="946" alt="screenshot" src="assets/imgs/Screenshot 2024-11-27 164059.png">
 
 
 Link to the project dashboard is [HERE](https://hh-predictive-analytics-p5-ab08303eeb0a.herokuapp.com/)
@@ -345,6 +345,8 @@ Data Practitioner’s Perspective:<br>
 
 Client’s Perspective:<br>
 * As a user, I want the dashboard to be intuitive and easy to navigate, so that I can use it without technical expertise.
+* As a user, I want to view a project summary that outlines the project’s purpose, dataset, and business requirements, so that I can quickly understand the scope and goals at a glance.
+* As a user, I want to review the project hypotheses and their validations, so that I can assess what the project aimed to achieve and evaluate its success.
 * As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.
 * As a user, I want to input house attributes into the dashboard and receive sale price predictions, so that I can evaluate potential future investments in Ames, Iowa *(business Requirement 2)*.
 * As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model.
@@ -436,6 +438,77 @@ The technologies used throughout the development are listed below:
 * [Gitpod](https://www.gitpod.io/) - Cloud IDE used for development
 * [Jupyter Notebook](https://jupyter.org/) - Interactive Python
 * [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
+
+## Testing
+### Manual Testing
+
+#### User Story Testing
+
+*As a user, I want to view a project summary that outlines the project’s purpose, dataset, and business requirements, so that I can quickly understand the scope and goals at a glance.*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Project summary page |Open app. View summary page | Page is displayed, can scroll between sections on page | Functions as intended |
+
+---
+
+*As a user, I want to review the project hypotheses and their validations, so that I can assess what the project aimed to achieve and evaluate its success.*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Project hypotheses page | Click on radio button on left navbar to navigate to Hypotheses page | Navigates to correct page. Can scroll through hypotheses | Functions as intended |
+
+---
+
+*As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Correlation study page | Click on radio button on left navbar to Correlation study page | Navigates to correct page | Functions as intended |
+| Correlation study page- Inpect Data | Click on "inspect dataset" | displays first 10 rows of dataset | Functions as intended |
+| Correlation study page- Scatterplots | Click on radio "Scatterplots" | displays selected scatterplots | Functions as intended |
+| Correlation study page- Boxplot | Click on radio "Boxplot" | displays selected Boxplot | Functions as intended |
+| Correlation study page- Heat map | Click on radio "Heatmap" | displays selected heatmap | Functions as intended |
+
+---
+
+*As a user, I want to input house attributes into the dashboard and receive sale price predictions, so that I can evaluate potential future investments in Ames, Iowa *(business Requirement 2)*.*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| ML- Predict sale price page | Click on radio button on left navbar to ML- Predict sale price page | Navigates to correct page | Functions as intended |
+| ML- Predict sale price page- plus/ minus | Click on a value for each feature using plus/minus buttons| changes according to the plus/minus input | Functions as intended |
+| ML- Predict sale price page- enter value | Click on a value for each feature by clicking on the value and manually entering a value between those listed in the key| changes according to the input | Functions as intended |
+| ML- Predict sale price page | Click on a value for each feature using plus/minus buttons| changes according to the plus/minus input | Functions as intended |
+| ML- Predict sale price page | Click on radio "Scatterplots" | displays selected scatterplots | Functions as intended |
+| Correlation study page- Boxplot | Click on radio "Boxplot" | displays selected Boxplot | Functions as intended |
+| Correlation study page- Heat map | Click on radio "Heatmap" | displays selected heatmap | Functions as intended |
+
+---
+
+*As a technical user, I can view the correlation analysis to see how the outcomes were reached (Business Requirement 1).*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Correlation Study page | Navigate to page | Clicking on navbar link in sidebar navigates to correct page | Functions as intended |
+| Correlation data | Tick correlation results checkbox | Correlation data is displayed on dashboard | Functions as intended |
+| PPS Heatmap | Tick PPS heatmap checkbox | Heatmap is displayed on dashboard | Functions as intended |
+| Feature Correlation | Select feature from dropdown box | Relevant countplot is displayed | Functions as intended |
+| Parallel Plot | Tick parallel plot checkbox | Parallel plot is displayed on dashboard, is interactive | Functions as intended |
+
+---
+
+*As a technical user, I can view all the data to understand the model performance and see statistics related to the model (Business Requirement 2)*
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Model performance page | Navigate to page | Clicking on navbar link in sidebar navigates to correct page | Functions as intended |
+| Success metrics | View page | Success metrics outlined in business case are displayed | Functions as intended |
+| ML Pipelines | View page | Both ML Pipelines from Jupyter notebooks are displayed | Functions as intended |
+| Feature Importance | View page | Most important features are plotted and displayed | Functions as intended |
+| Model Performance | View page | Confusion matrix for train and test sets are displayed | Functions as intended |
+
+---
 
 
 ## Validation

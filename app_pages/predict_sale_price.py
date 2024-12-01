@@ -47,11 +47,11 @@ def predict_sale_price_body():
         f"**Key**  \n"
         f"*Overall Quality*- values from 1-10, where 1 is very poor and "
         f"10 is very excellent.  \n"
-        f"*TotalBsmtSF*- Total basement square footage. Values are 0 - 6110  \n"
-        f"*GarageArea*- Garage area measured in square feet. values are 0 - 1418  \n"
+        f"*TotalBsmtSF*- Total basement square footage. Values are 0 - 7000  \n"
+        f"*GarageArea*- Garage area measured in square feet. values are 0 - 1800  \n"
         f"*GrLivArea*- Ground Living area measured in square feet. Values are "
-        f"334 - 5642.  \n"
-        f"*YearBuilt*- Original construction date. Values are 1872 - 2010. "
+        f"300 - 6000.  \n"
+        f"*YearBuilt*- Original construction date. Values are 1800 - 2025. "
 
     )
     st.write("---")
@@ -84,69 +84,75 @@ def DrawInputsWidgets():
     df = load_house_prices_records()
     percentageMin, percentageMax = 0.4, 2.0
 
+    feature_ranges = {
+        "OverallQual": {"min": 1, "max": 10, "default": 5},
+        "TotalBsmtSF": {"min": 0, "max": 7000, "default": 1000},
+        "GarageArea": {"min": 0, "max": 1800, "default": 500},
+        "GrLivArea": {"min": 300, "max": 6000, "default": 1500},
+        "YearBuilt": {"min": 1800, "max": 2025, "default": 2000},
+    }
+
     col1, col2, col3, col4 = st.beta_columns(4)
     col5, col6, col7, col8 = st.beta_columns(4)
 
     X_live = pd.DataFrame([], index=[0])
 
-    # Feature: Overall Quality
     with col1:
         feature = "OverallQual"
         st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median()),
+            label=f"{feature} (1-10)",
+            min_value=feature_ranges[feature]["min"],
+            max_value=feature_ranges[feature]["max"],
+            value=feature_ranges[feature]["default"],
+            step=1,
         )
         X_live[feature] = st_widget
 
-    # Feature: Total Basement Square Footage
     with col2:
         feature = "TotalBsmtSF"
         st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median()),
-            step=1,  
-            format="%d"
-        )
-        X_live[feature] = int(st_widget) 
-
-    # Feature: Garage Area
-    with col3:
-        feature = "GarageArea"
-        st_widget = st.number_input(
-        label=feature,
-        min_value=int(df[feature].min() * percentageMin),
-        max_value=int(df[feature].max() * percentageMax),
-        value=int(df[feature].median()),
-        step=1,  
-        format="%d"  
+            label=f"{feature} (sq ft)",
+            min_value=feature_ranges[feature]["min"],
+            max_value=feature_ranges[feature]["max"],
+            value=feature_ranges[feature]["default"],
+            step=10,  
+            format="%d",
         )
         X_live[feature] = int(st_widget)
 
-    # Feature: Ground Living Area
+    with col3:
+        feature = "GarageArea"
+        st_widget = st.number_input(
+            label=f"{feature} (sq ft)",
+            min_value=feature_ranges[feature]["min"],
+            max_value=feature_ranges[feature]["max"],
+            value=feature_ranges[feature]["default"],
+            step=10,  
+            format="%d",
+        )
+        X_live[feature] = int(st_widget)
+
     with col4:
         feature = "GrLivArea"
         st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median()),
+            label=f"{feature} (sq ft)",
+            min_value=feature_ranges[feature]["min"],
+            max_value=feature_ranges[feature]["max"],
+            value=feature_ranges[feature]["default"],
+            step=10,  
         )
-        X_live[feature] = st_widget
+        X_live[feature] = int(st_widget)
 
-    # Feature: Year Built
     with col5:
         feature = "YearBuilt"
         st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=int(df[feature].max() * percentageMax),
-            value=int(df[feature].median()),
+            label=f"{feature} (Year)",
+            min_value=feature_ranges[feature]["min"],
+            max_value=feature_ranges[feature]["max"],
+            value=feature_ranges[feature]["default"],
+            step=1,  
         )
-        X_live[feature] = st_widget
+        X_live[feature] = int(st_widget)
 
     st.write("### Input Features for Prediction: ")
     st.dataframe(X_live)

@@ -527,6 +527,20 @@ All python files were passed through the CI PEP8 Linter in order to validate the
 
 [Back to top](#table-of-contents)
 
+## Fixed bugs
+
+* Initially, the predict sale price function did not impose restrictions on the input ranges for various features. This allowed users to input values significantly deviating from the realistic ranges observed in the dataset. Such discrepancies could lead to inaccurate predictions, as the model was not trained on data far outside the dataset's original scope.
+
+To address this, I implemented realistic input ranges aligned with the dataset's values. These ranges were carefully selected to:
+
+* Reflect the actual distribution of the dataset, ensuring predictions are relevant and accurate.
+* Provide some flexibility to account for scenarios beyond the dataset, such as properties built in the future or with slightly larger or smaller attributes than those observed in the data.<br>
+
+For example:<br>
+* Overall Quality: Previously, values greater than 10 (the maximum quality score) could be selected. This has been restricted to the realistic range of 1–10.
+* Features like YearBuilt: The range was extended slightly to allow for future construction dates while maintaining realistic bounds.
+* Size Features (e.g., TotalBsmtSF, GarageArea): The ranges were adjusted to accommodate slightly larger or smaller properties, without allowing values that are illogical (e.g., negative square footage).
+
 ## Unfixed Bugs
 
 * No known unfixed bugs

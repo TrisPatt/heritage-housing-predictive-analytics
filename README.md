@@ -10,8 +10,8 @@ Link to the project dashboard is [HERE](https://hh-predictive-analytics-p5-ab083
 - [Dataset Content](#dataset-content)
 - [Hypotheses and how to validate?](#hypotheses-and-how-to-validate?)
 - [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
-- [Business Requirement 1: Correlation Analysis](#Business-Requirement-1:-Correlation-Analysis)
-- [Business Requirement 2: Predict Sale Price](#Business-Requirement-2:-Predict-Sale-Price)
+- [Business Requirement 1: Correlation Analysis](#business-Requirement-1-Correlation-Analysis)
+- [Business Requirement 2: Predict Sale Price](#business-Requirement-2-Predict-Sale-Price)
 - [ML Business Case](#ml-business-case)
 - [User stories and Epics](#User-stories-and-Epics)
 - [Dashboard Design](#dashboard-design)
@@ -23,9 +23,6 @@ Link to the project dashboard is [HERE](https://hh-predictive-analytics-p5-ab083
 - [Credits and Acknowledgements](#credits-and-acknowledgements)
 - [Content](#content)
 
-
-### Content
-- [Credits and Acknowledgements](#credits-and-acknowledgements)
 
 ## Introduction
 

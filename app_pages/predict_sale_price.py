@@ -21,11 +21,12 @@ def predict_sale_price_body():
     users to input house feature values and receive predictions for single
     properties or a batch of four inherited properties.
 
-    Loads the pre-trained regression pipeline and feature names from files.
-    Provides detailed descriptions and ranges for input features to guide users.
-    Generates interactive widgets for inputting feature values.
-    Includes a button to predict the sale price for a single house.
-    Provides an option to predict sale prices for four inherited houses.
+   -  Loads the pre-trained regression pipeline and feature names from files.
+    - Provides detailed descriptions and ranges for input features to guide
+    users.
+    - Generates interactive widgets for inputting feature values.
+    - Includes a button to predict the sale price for a single house.
+    - Provides an option to predict sale prices for four inherited houses.
     """
 
     st.title("House Price Prediction Interface")
@@ -59,8 +60,10 @@ def predict_sale_price_body():
         f"**Key**  \n"
         f"*Overall Quality*- values from 1-10, where 1 is very poor and "
         f"10 is very excellent.  \n"
-        f"*TotalBsmtSF*- Total basement square footage. Values are 0 - 7000  \n"
-        f"*GarageArea*- Garage area measured in square feet. values are 0 - 1800  \n"
+        f"*TotalBsmtSF*- Total basement square footage. Values are 0 - "
+        f"7000  \n"
+        f"*GarageArea*- Garage area measured in square feet. values are 0 - "
+        f"1800  \n"
         f"*GrLivArea*- Ground Living area measured in square feet. Values are "
         f"300 - 6000.  \n"
         f"*YearBuilt*- Original construction date. Values are 1800 - 2025. "
@@ -92,17 +95,17 @@ def DrawInputsWidgets():
     """
     Generate Widgets to Input Live Data for Prediction.
 
-    This function creates interactive widgets using Streamlit to allow users to 
-    input values for key features needed for house price prediction. Each widget 
-    is customized with appropriate ranges and default values based on the dataset 
-    and domain knowledge.
+    This function creates interactive widgets using Streamlit to allow users to
+    input values for key features needed for house price prediction. Each
+    widget is customized with appropriate ranges and default values based on
+    the dataset and domain knowledge.
 
     Returns:
     --------
     pd.DataFrame:
-        A DataFrame containing the user-inputted values for the selected features.
+    A DataFrame containing the user-inputted values for the selected features.
     """
-    
+
     df = load_house_prices_records()
     percentageMin, percentageMax = 0.4, 2.0
 

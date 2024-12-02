@@ -8,14 +8,17 @@ from src.machine_learning.evaluate import (regression_performance,
 
 def technical_analysis_body():
     """
-    Perform and Display Technical Analysis of the Regression Model's Performance.
+    Perform and Display Technical Analysis of the Regression Model's
+    Performance.
 
     - Load and display the final machine learning pipeline used for training.
-    - Evaluate the model using R² score, Mean Absolute Error (MAE), Mean Squared Error (MSE),
-      and Root Mean Squared Error (RMSE) on both training and test sets.
-    - Provide a visual summary of model evaluation through scatterplots of actual vs predicted values.
-    - Highlight the importance of features in influencing the sale price predictions using
-      a feature importance bar chart.
+    - Evaluate the model using R² score, Mean Absolute Error (MAE), Mean
+    Squared Error (MSE), and Root Mean Squared Error (RMSE) on both training
+    and test sets.
+    - Provide a visual summary of model evaluation through scatterplots of
+    actual vs predicted values.
+    - Highlight the importance of features in influencing the sale price
+    predictions using a feature importance bar chart.
 
     """
 

@@ -524,7 +524,7 @@ The technologies used throughout the development are listed below:
 
 ## Validation
 
-All python files were passed through the CI PEP8 Linter in order to validate the code to adhere to PEP8 standards. All files passed with no errors, with exception of "line to long" on some docstrings containing text.
+All python files were passed through the CI PEP8 Linter in order to validate the code to adhere to PEP8 standards. All files passed with no errors.
 
 [Back to top](#table-of-contents)
 

@@ -45,10 +45,9 @@ Beyond these immediate sales, the client is interested in developing a predictiv
 
 
 **Business Requirements**
-- Correlation Analysis
+
 1. The client is keen to understand how various house attributes correlate with sale prices. As part of this, she expects data visualizations that clearly illustrate the relationships between key variables and sale prices.
 
-- Sales Price Prediction
 2. The client wants to predict the sale prices for her four inherited houses and any other property in Ames, Iowa.
 
 
@@ -356,7 +355,7 @@ Client’s Perspective:<br>
 * As a user, I want to review the project hypotheses and their validations, so that I can assess what the project aimed to achieve and evaluate its success.
 * As a user, I want to explore visualizations of how house attributes affect sale price, so that I can make data-driven decisions about property improvements *(Business Requirement 1)*.
 * As a user, I want to input house attributes into the dashboard and receive sale price predictions, so that I can evaluate potential future investments in Ames, Iowa *(business Requirement 2)*.
-* As a user, I want to see the value of my each of my 4 inherited houses in Ames, Iowa and the total for all *(business Requirement 2)*.
+* As a user, I want to see the value of each of my 4 inherited houses in Ames, Iowa and the total value for all *(business Requirement 2)*.
 * As a user, I want the dashboard to provide an overview of the model performance and see statistics related to the model *(business Requirement 2)*.
 ---
 
@@ -491,11 +490,13 @@ The technologies used throughout the development are listed below:
 | ML- Predict sale price page- plus/ minus | Click on a value for each feature using plus/minus buttons| changes according to the plus/minus input | Functions as intended |
 | ML- Predict sale price page- Enter value in range | Click on a value for each feature by clicking on the value and manually entering a value between those listed in the key| changes according to the input. | Functions as intended |
 | ML- Predict sale price page- Enter value out of range | Click on a value for each feature by clicking on the value and manually entering a value out of the range form those listed in the key| Displays error message | Functions as intended |
-| ML- Predict sale price page- Enter values for prediction | select values from features within selected range| Once values are selected, they are replicated in "Input Features for Prediction"| | Functions as intended |
-| ML- Predict sale price page- predict price | click "Predict Sale Price for Single House"| A value is returned and displayed on the page| | Functions as intended |
+| ML- Predict sale price page- Enter values for prediction | select values from features within selected range| Once values are selected, they are replicated in "Input Features for Prediction"| Functions as intended |
+| ML- Predict sale price page- predict price | click "Predict Sale Price for Single House"| A value is returned and displayed on the page | Functions as intended |
 
 ---
-* As a user, I want to see the value of my each of my 4 inherited houses in Ames, Iowa and the total for all *(business Requirement 2)*.
+
+* As a user, I want to see the value of each of my 4 inherited houses in Ames, Iowa and the total value for all *(business Requirement 2)*.
+
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
 | ML- Predict sale price page- Inherited houses | Click on "Predict Prices for Inherited Houses" | Shows each feature, its corresponding value and overall price. Shows total price | Functions as intended |
@@ -516,7 +517,7 @@ The technologies used throughout the development are listed below:
 
 | Feature | Action | Expected Result | Actual Result |
 | --- | --- | --- | --- |
-| Conclusions and considerations | Navigate to page using radio button | Displaysconclusions and considerations | Functions as intended |
+| Conclusions and considerations | Navigate to page using radio button | Displays conclusions and considerations | Functions as intended |
 
 
 [Back to top](#table-of-contents)
@@ -566,11 +567,11 @@ enableCORS = false\n\
 ```
 2. Within your working directory, ensure there is a runtime.txt file containing a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack supported version of Python.
 ```
-python-3.10.12
+python-3.8.18
 ```
 3. Within your working directory, ensure there is a Procfile file containing the following:
 ```
-web: sh setup.sh && streamlit run app.py
+web: sh setup.sh && streamlit run main.py
 ```
 4. Ensure your requirements.txt file contains all the packages necessary to run the streamlit dashboard.
 5. Update your .gitignore and .slugignore files with any files/directories that you do not want uploading to GitHub or are unnecessary for deployment.

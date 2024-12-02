@@ -103,7 +103,7 @@ Hypothesis:
 The amount of living space significantly impacts sale price. Larger living areas on the ground floor, first floor, and second floor will correlate with higher property values.
 
 Validation Plan:
-Analyze the relationship between sale price and living space variables (GroundLivingArea, FirstFloorSF, SecondFloorSF) using scatterplots.
+Analyse the relationship between sale price and living space variables (GroundLivingArea, FirstFloorSF, SecondFloorSF) using scatterplots.
 Compute correlation coefficients to quantify the strength of the relationships.
 
 
@@ -123,7 +123,7 @@ Hypothesis:
 The quality of a property’s construction directly impacts its value, with higher-quality builds commanding higher sale prices.
 
 Validation Plan:
-Use boxplots to analyze the relationship between sale price and categorical variables (OverallQuality, KitchenQuality).
+Use boxplots to analyse the relationship between sale price and categorical variables (OverallQuality, KitchenQuality).
 Compute summary statistics for sale price across quality levels to highlight the differences.
 
 
@@ -140,11 +140,11 @@ Group properties by decade and calculate average sale prices to observe trends o
 
 **Additional factors/ Limitations**
 
-I acknowledge that neighborhood area is not included in this dataset. I hypothesize that neighborhood characteristics play a significant role in determining sale price and should be considered as an important factor by the client alongside the results provided in this report.
+I acknowledge that neighbourhood area is not included in this dataset. I hypothesise that neighbourhood characteristics play a significant role in determining sale price and should be considered as an important factor by the client alongside the results provided in this report.
 
-It is important to note, however, that measuring neighborhood desirability can be a complex task. This factor often requires subjective judgment or external data inputs, such as socio-economic indicators, proximity to amenities, or crime rates, which are not readily available in the current dataset. As such, the absence of this variable may limit the comprehensiveness of the analysis.
+It is important to note, however, that measuring neighbourhood desirability can be a complex task. This factor often requires subjective judgment or external data inputs, such as socio-economic indicators, proximity to amenities, or crime rates, which are not readily available in the current dataset. As such, the absence of this variable may limit the comprehensiveness of the analysis.
 
-Future studies could incorporate external data sources or proxy variables to better account for the influence of neighborhood on property values.
+Future studies could incorporate external data sources or proxy variables to better account for the influence of neighbuorhood on property values.
 
 [Back to top](#table-of-contents)
 
@@ -168,7 +168,7 @@ Spearman and Pearson correlation methods are widely used for identifying relatio
 
 3. Identify highest correlated features<br>
 Rationale:
-Using Pearson and Spearman correlation coefficients alongside PPS analysis, we will identify the features most strongly associated with sale price to prioritize them for further modeling and analysis
+Using Pearson and Spearman correlation coefficients alongside PPS analysis, we will identify the features most strongly associated with sale price to prioritise them for further modeling and analysis
 
 4. Visualize Relationships Between Sale Price and Key Features<br>
 Rationale:
@@ -196,7 +196,7 @@ This process will be undertaken as part of the **Model Training, Optimization, a
 
 2. Map Relationships Between Features and Sale Price<br>
 Objective:
-Use the regression model to analyze and quantify the impact of individual house attributes on sale price.<br>
+Use the regression model to analyse and quantify the impact of individual house attributes on sale price.<br>
 Approach:
 Leverage feature importance metrics from the regression model to determine which variables contribute most to sale price predictions.
 Use feature importance to illustrate the marginal effects of specific features (e.g., living area, build quality) on sale price.<br>
@@ -247,7 +247,7 @@ A dataset from Ames, Iowa, including features such as living space, build qualit
 
 Initial Exploration:
 Assess data quality, completeness, and relevance to the clients goals.
-Analyze relationships between variables and sale price through exploratory data analysis (EDA).
+Analyse relationships between variables and sale price through exploratory data analysis (EDA).
 
 3. Data Preparation
 Preprocessing Steps:
@@ -295,7 +295,7 @@ Description: Gather relevant data to understand the problem domain and prepare i
 **User Stories:**<br>
 
 Data Practitioner’s Perspective:<br>
-* As a data practitioner, I want to obtain a public dataset of house attributes and sale prices in Ames, Iowa, so that I can analyze and model the relationship between attributes and prices.
+* As a data practitioner, I want to obtain a public dataset of house attributes and sale prices in Ames, Iowa, so that I can analyse and model the relationship between attributes and prices.
 * As a data practitioner, I want to understand the client’s specific goals and requirements, so that I can tailor the analysis and predictions to their needs.<br>
 
 Client’s Perspective:<br>
@@ -305,7 +305,7 @@ Client’s Perspective:<br>
 ---
 
 **Epic 2: Data Visualization, Cleaning, and Preparation**<br>
-Description: Analyze, visualize, and prepare the dataset to extract meaningful insights and ensure it is ready for modeling.
+Description: Analyse, visualize, and prepare the dataset to extract meaningful insights and ensure it is ready for modeling.
 
 **User Stories:**<br>
 
@@ -524,7 +524,7 @@ The technologies used throughout the development are listed below:
 
 ## Validation
 
-All python files were passed through the CI PEP8 Linter in order to validate the code to adhere to PEP8 standards. All files passed with no errors. 
+All python files were passed through the CI PEP8 Linter in order to validate the code to adhere to PEP8 standards. All files passed with no errors, with exception of "line to long" on some docstrings containing text.
 
 [Back to top](#table-of-contents)
 
@@ -620,9 +620,9 @@ In order to ensure all the correct dependencies are installed in your local envi
 * This project utilized the repository template from the Heritage Housing idea provided by Code Institute (CI).
 * The dataset was sourced from Kaggle, as referenced above.
 * The custom class for hyperparameter optimization was adapted from the Predict Tenure Notebook (CI).
-* Guidance and inspiration were drawn from the CI Data Analytics Program, including the Walkthrough Project 2 - Churnometer.
-* Additional research and insights were gathered from resources such as Google, YouTube, Stack Overflow, Slack, and GeeksforGeeks, which provided valuable explanations across various topics.  \n
-* A special thanks to my mentor, Mo Shami, for his invaluable guidance and support throughout this project.
+* Guidance and inspiration were drawn from the CI Data Analytics Program, including the Walkthrough Project 2 - Churnometer. Markdown is made in the code where specific pieces of code have been reused or adapted from other sources. 
+* Additional research and insights were gathered from resources such as Google, YouTube, Stack Overflow, Slack, and GeeksforGeeks, which provided valuable explanations across various topics.  
+* A special thanks to my mentor, Mo Shami, for his guidance and support throughout this project.
 
 [Back to top](#table-of-contents)
 

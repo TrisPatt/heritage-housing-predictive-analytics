@@ -12,12 +12,15 @@ def regression_performance(
     y_test,
     best_regressor_pipeline
 ):
+    """
+    Evaluate and display the performance metrics of a regression model
+    on both the training and test datasets.
 
-    # Predictions for train and test sets
+    """
+
     train_pred = best_regressor_pipeline.predict(X_train)
     test_pred = best_regressor_pipeline.predict(X_test)
 
-    # Train set performance
     st.info("Train Set")
     st.write(f"R2 Score: {r2_score(y_train, train_pred):.3f}")
     st.write(
@@ -31,7 +34,6 @@ def regression_performance(
         f"{mean_squared_error(y_train, train_pred, squared=False):,.2f}"
     )
 
-    # Test set performance
     st.info("Test Set")
     st.write(f"R2 Score: {r2_score(y_test, test_pred):.3f}")
     st.write(
@@ -46,7 +48,6 @@ def regression_performance(
     )
 
 
-# Regression evaluation plots
 def regression_evaluation_plots(
     X_train,
     y_train,
@@ -54,7 +55,12 @@ def regression_evaluation_plots(
     y_test,
     best_regressor_pipeline
 ):
-    # Train predictions
+    """
+    Generate and display scatterplots to evaluate the performance of a
+    regression model on the training and test datasets.
+
+    """
+
     train_pred = best_regressor_pipeline.predict(X_train)
     test_pred = best_regressor_pipeline.predict(X_test)
 

@@ -11,7 +11,13 @@ sns.set_style("whitegrid")
 
 
 def HH_correlation_study_body():
-    # Load data
+    """
+    Heritage Housing Correlation Study:
+    This function performs a correlation analysis of selected variables
+    against the sale price and displays results interactively in Streamlit.
+
+    """
+
     df = load_house_prices_records()
 
     vars_to_study = [
@@ -28,7 +34,6 @@ def HH_correlation_study_body():
         "to show that. Click below to inspect the data."
     )
 
-    # Inspect data
     if st.checkbox("Inspect dataset"):
         st.write(
             f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns. "
@@ -39,20 +44,22 @@ def HH_correlation_study_body():
     st.write("---")
 
     st.info(
-        f"A correlation study was conducted in the notebook to better understand "
-        f"how the variables are correlated to the sale price. \n"
+        f"A correlation study was conducted in the notebook to better "
+        f"understand how the variables are correlated to the sale price. \n"
     )
     st.info(
         "As part of this study, Pandas profiling was conducted on the dataset "
         "to examine variable types, distributions, and missing values, "
         "as well as to interpret the variables in a business context. "
-        "Categorical variables were converted into numerical formats to enable "
-        "interpretation by the model. "
+        "Categorical variables were converted into numerical formats to "
+        "enable interpretation by the model. "
         "The Spearman and Pearson methods were employed to identify the top "
         "10 most correlated features. "
         "Spearman measures the monotonic relationship between two variables. "
-        "Pearson measures the linear relationship between two continuous variables. "
-        "The most highly correlated variables were selected for further analysis. "
+        "Pearson measures the linear relationship between two continuous "
+        "variables. "
+        "The most highly correlated variables were selected for further "
+        "analysis. "
         "Visualizations, including scatterplots, box plots, and a heatmap, "
         "were used to illustrate these correlations. "
         f"The most correlated variables are: **{vars_to_study}**"
@@ -61,12 +68,15 @@ def HH_correlation_study_body():
     st.write("---")
     st.info(
         "**Analysis Summary**  \n"
-        "* The analysis indicates that the overall build quality of a property "
+        "* The analysis indicates that the overall build quality of a "
+        "property "
         "(OverallQual) exhibits the strongest correlation with the Sale Price "
-        "(SalePrice). This relationship is clearly illustrated in the box plot "
+        "(SalePrice). This relationship is clearly illustrated in the box "
+        "plot "
         "and is further supported by the highest correlation coefficients "
         "observed in both the Pearson and Spearman correlation methods.  \n\n"
-        "* The variables ground living area (GrLivArea), 1st floor square footage "
+        "* The variables ground living area (GrLivArea), 1st floor square "
+        "footage "
         "(1stFlrSF), total basement area (TotalBsmtSF), and garage area "
         "(GarageArea) also show significant correlations with Sale Price. "
         "The accompanying scatterplots demonstrate positive linear regression "
@@ -76,28 +86,28 @@ def HH_correlation_study_body():
         "should not be overlooked."
     )
 
+    st.write("---")
     st.info(
-        "The following scatterplots show the correlation between each selected "
+        "The following scatterplots show the correlation between each "
+        "selected "
         "variable and the sale price. Click below to see the scatterplots."
     )
 
-    # Filter the DataFrame for EDA
     df_eda = df.filter(vars_to_study + ['SalePrice'])
-
-    # Add PriceCategory for additional analysis
     df_eda['PriceCategory'] = pd.qcut(
         df_eda['SalePrice'], q=3, labels=['Low', 'Medium', 'High']
     )
 
-    # Generate and display plots
     if st.checkbox("Scatter plots"):
         st.write(scatter_plots(df_eda))
 
     st.write("---")
 
     st.info(
-        "The following box plot displays the median and quartile ranges of SalePrice "
-        "across different quality levels, highlighting the spread of values within "
+        "The following box plot displays the median and quartile ranges of "
+        "SalePrice "
+        "across different quality levels, highlighting the spread of values "
+        "within "
         "each quality rating. Click below to view box plot."
     )
 
@@ -107,21 +117,26 @@ def HH_correlation_study_body():
     st.write("---")
 
     st.info(
-        "The following heat map shows the combined average Pearson and Spearman "
-        "correlations between the selcted features. "
-        "Darker shades of red indicate stronger positive correlations, while darker "
+        "The following heat map shows the combined average Pearson and "
+        "Spearman correlations between the selcted features. "
+        "Darker shades of red indicate stronger positive correlations, while "
+        "darker "
         "shades of blue represent stronger negative correlations. "
-        "Combining the two methods provides a balanced perspective by leveraging the "
-        "strengths of both. Pearson may fail to detect strong monotonic relationships "
-        "that are not linear, while Spearman excels in identifying such patterns." 
-    )  
+        "Combining the two methods provides a balanced perspective by "
+        "leveraging the "
+        "strengths of both. Pearson may fail to detect strong monotonic "
+        "relationships that are not linear, while Spearman excels in "
+        "identifying such patterns."
+    )
 
     if st.checkbox("Heat Map"):
         st.write(heat_map(df_eda))
 
 
 def scatter_plots(df_eda):
-    # Create subplots
+    """
+    Create and display scatterplots
+    """
     fig, axes = plt.subplots(2, 3, figsize=(15, 10))
     axes = axes.flatten()
 
@@ -149,6 +164,9 @@ def scatter_plots(df_eda):
 
 
 def box_plot(df_eda):
+    """
+    Create and display Box plot
+    """
     plt.figure(figsize=(8, 6))
     sns.boxplot(
         data=df_eda, x='OverallQual', y='SalePrice', palette='viridis'
@@ -158,13 +176,18 @@ def box_plot(df_eda):
     plt.ylabel('SalePrice')
     st.pyplot(plt)
 
+
 def heat_map(df_eda):
+    """
+    Create and display heatmap
+    """
     corr_spearman = df_eda.corr(method='spearman')
     corr_pearson = df_eda.corr(method='pearson')
 
     combined_corr = (corr_spearman + corr_pearson) / 2
 
     plt.figure(figsize=(10, 8))
-    sns.heatmap(combined_corr, annot=True, cmap='coolwarm', center=0, vmin=-1, vmax=1)
+    sns.heatmap(combined_corr, annot=True, cmap='coolwarm',
+                center=0, vmin=-1, vmax=1)
     plt.title("Combined Average Correlation (Spearman & Pearson)")
     st.pyplot(plt)

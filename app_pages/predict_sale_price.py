@@ -13,13 +13,25 @@ from src.machine_learning.predictive_analysis_ui import (
 
 
 def predict_sale_price_body():
-    """Predict sale price contents."""
+    """
+    Predict Sale Price Page..
+
+    This function serves as the main page for predicting house sale prices
+    in the Streamlit application. It provides an interactive interface for
+    users to input house feature values and receive predictions for single
+    properties or a batch of four inherited properties.
+
+    Loads the pre-trained regression pipeline and feature names from files.
+    Provides detailed descriptions and ranges for input features to guide users.
+    Generates interactive widgets for inputting feature values.
+    Includes a button to predict the sale price for a single house.
+    Provides an option to predict sale prices for four inherited houses.
+    """
 
     st.title("House Price Prediction Interface")
     st.write("---")
     st.write("## **Predict Sale Price**")
 
-    # Load model and features
     version = 'v2'
     file_path = (
         f"outputs/ml_pipeline/predict_SalePrice/{version}/"
@@ -56,10 +68,8 @@ def predict_sale_price_body():
     )
     st.write("---")
 
-    # Generate Live Data
     X_live = DrawInputsWidgets()
 
-    # Predict single house sale price
     if st.button("Predict Sale Price for Single House"):
         predict_sale_price(X_live, price_features, price_pipeline)
 
@@ -70,7 +80,6 @@ def predict_sale_price_body():
         "inherited houses:"
     )
 
-    # Predict inherited houses sale price
     st.write("### Predict Prices for Inherited Houses")
     if st.checkbox("Predict for Inherited Houses"):
         inherited_houses = load_inherited_houses()
@@ -80,7 +89,20 @@ def predict_sale_price_body():
 
 
 def DrawInputsWidgets():
-    """Generate widgets to input live data."""
+    """
+    Generate Widgets to Input Live Data for Prediction.
+
+    This function creates interactive widgets using Streamlit to allow users to 
+    input values for key features needed for house price prediction. Each widget 
+    is customized with appropriate ranges and default values based on the dataset 
+    and domain knowledge.
+
+    Returns:
+    --------
+    pd.DataFrame:
+        A DataFrame containing the user-inputted values for the selected features.
+    """
+    
     df = load_house_prices_records()
     percentageMin, percentageMax = 0.4, 2.0
 
@@ -115,7 +137,7 @@ def DrawInputsWidgets():
             min_value=feature_ranges[feature]["min"],
             max_value=feature_ranges[feature]["max"],
             value=feature_ranges[feature]["default"],
-            step=10,  
+            step=10,
             format="%d",
         )
         X_live[feature] = int(st_widget)
@@ -127,7 +149,7 @@ def DrawInputsWidgets():
             min_value=feature_ranges[feature]["min"],
             max_value=feature_ranges[feature]["max"],
             value=feature_ranges[feature]["default"],
-            step=10,  
+            step=10,
             format="%d",
         )
         X_live[feature] = int(st_widget)
@@ -139,7 +161,7 @@ def DrawInputsWidgets():
             min_value=feature_ranges[feature]["min"],
             max_value=feature_ranges[feature]["max"],
             value=feature_ranges[feature]["default"],
-            step=10,  
+            step=10,
         )
         X_live[feature] = int(st_widget)
 
@@ -150,7 +172,7 @@ def DrawInputsWidgets():
             min_value=feature_ranges[feature]["min"],
             max_value=feature_ranges[feature]["max"],
             value=feature_ranges[feature]["default"],
-            step=1,  
+            step=1,
         )
         X_live[feature] = int(st_widget)
 

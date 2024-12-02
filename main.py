@@ -11,7 +11,6 @@ from app_pages.conclusion import conclusion_body
 # Create an instance
 app = MultiPage(app_name="Heritage Housing- Predict Sale price")
 
-# Add your app pages here using .add_page()
 app.app_page("Project Summary", project_summary_body)
 app.app_page("Project Hypotheses and Validation", hypothesis_body)
 app.app_page("Correlation Study", HH_correlation_study_body)

@@ -94,12 +94,12 @@ def hypothesis_body():
     st.write("---")
     st.info(
         f"**Additional factors/ Limitations**  \n\n"
-        f"I acknowledge that neighborhood area is not included in this "
-        f"dataset. I hypothesize that neighborhood characteristics play a "
+        f"I acknowledge that neighbourhood area is not included in this "
+        f"dataset. I hypothesise that neighbourhood characteristics play a "
         f"significant role in determining sale price and should be "
         f"considered as an important factor by the client alongside the "
         f"results provided in this report. "
-        f"It is important to note, however, that measuring neighborhood "
+        f"It is important to note, however, that measuring neighbourhood "
         f"desirability can be a complex task. This factor often requires "
         f"subjective judgment or external data inputs, "
         f"such as socio-economic indicators, proximity to amenities, or crime "
@@ -107,6 +107,6 @@ def hypothesis_body():
         f"As such, the absence of this variable may limit the "
         f"comprehensiveness of the analysis. "
         f"Future studies could incorporate external data sources or proxy "
-        f"variables to better account for the influence of neighborhood on "
+        f"variables to better account for the influence of neighbourhood on "
         f"property values."
     )

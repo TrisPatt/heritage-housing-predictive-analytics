@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-
+#Load data
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_house_prices_records():
     df = pd.read_csv(

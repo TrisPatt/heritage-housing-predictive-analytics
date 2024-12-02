@@ -60,7 +60,7 @@ def HH_correlation_study_body():
         "variables. "
         "The most highly correlated variables were selected for further "
         "analysis. "
-        "Visualizations, including scatterplots, box plots, and a heatmap, "
+        "Visualisations, including scatterplots, box plots, and a heatmap, "
         "were used to illustrate these correlations. "
         f"The most correlated variables are: **{vars_to_study}**"
     )

@@ -38,7 +38,7 @@ def hypothesis_body():
         f"methods, indicating strong relationships with sale price. "
         f"The scatterplot for total basement square footage showed a steep "
         f"positive regression line, with data points forming a relatively "
-        f"tight cluster. his pattern highlights a strong correlation with "
+        f"tight cluster. This pattern highlights a strong correlation with "
         f"sale price. The scatterplot for garage area exhibited a steady "
         f"positive regression line, further supporting the hypothesis that "
         f"garage size influences property value.  \n"
@@ -68,7 +68,7 @@ def hypothesis_body():
         f"**Conclusion:**  "
         f"The hypothesis that build quality has a substantial impact on sale"
         f"price is strongly supported by the analysis. Both statistical "
-        f"methods and visualizations confirm that higher build quality "
+        f"methods and visualisations confirm that higher build quality "
         f"consistently correlates with higher property value."
 
     )

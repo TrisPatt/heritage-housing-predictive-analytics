@@ -93,7 +93,7 @@ def hypothesis_body():
         f"The hypothesis that newer properties attract higher sale prices is "
         f"supported by both statistical and visual analyses. While the "
         f"correlation is not as strong as some other features, the results "
-        f"demonstrate a clear trend, emphasizing the value of modern "
+        f"demonstrate a clear trend, emphasising the value of modern "
         f"construction in the housing market"
     )
     st.write("---")

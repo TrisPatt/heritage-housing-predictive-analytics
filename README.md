@@ -34,10 +34,10 @@ The objective of this project is to develop a machine learning application capab
 The client has inherited four properties from her late great-grandfather, located in Ames, Iowa, USA. Originally from Belgium, the client has a strong understanding of property prices in her home country. However, she recognises that the factors influencing property value in Belgium may not align with those in Ames, leaving her uncertain about accurately appraising the inherited properties.
 
 **Client's Goals**
-- Accurate Property Valuation
+- Accurate Property Valuation:<br>
 The client is aware of the significant financial implications of mispricing these properties. She seeks data-driven insights to ensure her pricing strategy aligns with the realities of the Iowan housing market, thereby maximising the potential sale price of the four properties.
 
-- Future Market Predictability
+- Future Market Predictability:<br>
 Beyond these immediate sales, the client is interested in developing a predictive model to estimate the sale price of any house in Ames. This capability would enable her to make informed decisions for future investments or sales in the area.
 
 
